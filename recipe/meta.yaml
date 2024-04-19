@@ -22,7 +22,7 @@ test:
   requires:
     - {{ compiler('rust') }}
   commands:
-    - cargo llvm-cov --help
+    - cargo llvm-cov --help  # [build_platform == target_platform]
 
 about:
   home: https://github.com/taiki-e/cargo-llvm-cov
