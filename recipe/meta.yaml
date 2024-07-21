@@ -1,4 +1,4 @@
-{% set version = "0.6.10" %}
+{% set version = "0.6.11" %}
 
 package:
   name: cargo-llvm-cov
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/taiki-e/cargo-llvm-cov/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b8250ee10a3902b20c5c93b3ddd37e98a375048e9c7d500c5dafc950c3790415
+  sha256: 92f7abd853a6e2968390ab48fa38268352aff076a0f0c441b34244aee34054de
 
 build:
   number: 0
@@ -14,7 +14,8 @@ build:
 requirements:
   build:
     - {{ compiler('rust') }}
-    - {{ compiler('c') }}  # [linux]
+    - {{ compiler('c') }}        # [linux]
+    - {{ compiler('m2w64_c') }}  # [win]
     - {{ stdlib('c') }}
     - cargo-bundle-licenses
 
