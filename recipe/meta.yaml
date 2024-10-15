@@ -9,13 +9,12 @@ source:
   sha256: 744a5d8ba6a735d2e71ea455d8519bb4e902abe5439f1e934b0669e0dc37d829
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('rust') }}
-    - {{ compiler('c') }}        # [linux]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - cargo-bundle-licenses
 
@@ -23,7 +22,7 @@ test:
   requires:
     - {{ compiler('rust') }}
   commands:
-    - cargo llvm-cov --help  # [build_platform == target_platform]
+    - cargo llvm-cov --help
 
 about:
   home: https://github.com/taiki-e/cargo-llvm-cov
