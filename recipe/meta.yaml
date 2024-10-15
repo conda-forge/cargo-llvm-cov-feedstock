@@ -14,17 +14,15 @@ build:
 requirements:
   build:
     - {{ compiler('rust') }}
-    - {{ compiler('c') }}        # [linux]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ stdlib('c') }}          # [unix]
-    - {{ stdlib("m2w64_c") }}    # [win]
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - cargo-bundle-licenses
 
 test:
   requires:
     - {{ compiler('rust') }}
   commands:
-    - cargo llvm-cov --help  # [build_platform == target_platform]
+    - cargo llvm-cov --help
 
 about:
   home: https://github.com/taiki-e/cargo-llvm-cov
