@@ -1,4 +1,4 @@
-{% set version = "0.6.19" %}
+{% set version = "0.6.20" %}
 
 package:
   name: cargo-llvm-cov
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/taiki-e/cargo-llvm-cov/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d6afb020903e8e86d4b5e9db7df01f6954ce8e4db54b578a513ec002ac3c4586
+  sha256: 0290fce173f619bfe590908d34d895b8ca2ef0c263c98858d1f5edec56e4d11a
 
 build:
   number: 0
